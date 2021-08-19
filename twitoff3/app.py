@@ -19,7 +19,8 @@ def create_app():
     # Create tables
     with app.app_context():
         db.create_all()
-        
+
+         
     @app.route("/reset")
     def reset():
         db.drop_all()
