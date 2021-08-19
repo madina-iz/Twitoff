@@ -1,5 +1,5 @@
 from os import getenv
-from .models import db, Tweet, User
+from twitoff3.models import db, Tweet, User
 import tweepy
 import spacy
 

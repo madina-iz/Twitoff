@@ -1,9 +1,9 @@
-from .twitter import add_or_update_user
+from twitoff3.twitter import add_or_update_user
 from flask import Flask
 from flask import render_template
 from flask import request
-from .models import db, User
-from .predict import predict_user
+from twitoff3.models import db, User
+from twitoff3.predict import predict_user
 import os
 
 def create_app():
