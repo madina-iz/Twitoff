@@ -1,4 +1,4 @@
-from twitoff3.twitter import add_or_update_user
+from .twitter import add_or_update_user
 from flask import Flask
 from flask import render_template
 from flask import request

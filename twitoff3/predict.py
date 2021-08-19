@@ -1,27 +1,3 @@
-import numpy as np
-from sklearn.linear_model import LogisticRegression
-import tweepy
-import spacy
-import en_core_web_sm
-import pickle
-
-TWITTER_API_KEY = "RhLwEal1HaKFO96oXiYjHDlC6"
-TWITTER_API_KEY_SECRET = "4BLMVQbNnJ3PDB4518MW2Z772b7TBBPlUeXcS8KBdYFqKIg2c9"
-
-auth = tweepy.OAuthHandler(TWITTER_API_KEY, TWITTER_API_KEY_SECRET)
-
-twitter = tweepy.API(auth)
-
-nasa = twitter.get_user("nasa")
-jeff = twitter.get_user("jeffbezos")
-
-nasa_tweets = nasa.timeline(count=200, exclude_replies=True, include_rts=False, tweet_mode="Extended")
-
-jeff_tweets = jeff.timeline(count=200, exclude_replies=True, include_rts=False, tweet_mode="Extended")
-
-nlp_model = en_core_web_sm.load()
-
-
 """Prediction of Users based on Tweet embeddings."""
 
 # Package imports
@@ -30,7 +6,7 @@ import spacy
 from sklearn.linear_model import LogisticRegression
 
 # Local imports
-from twitoff3.models import User
+from .models import User
 
 
 def predict_user(user1_name, user2_name, tweet_text):
