@@ -1,1 +1,8 @@
 .env
+twitoff1/
+twitoff2/
+my_nlp_model/
+Pipfile*
+twitter_keys.txt
+twitter.ipynb
+twitoff3/twitoff.sqlite3
