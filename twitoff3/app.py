@@ -42,21 +42,20 @@ def create_app():
                   
 
     @app.route("/compare", methods=["POST"])
-    def compare():        
-        user0, user1 = sorted(
-            [request.values["user0"], request.values["user1"]])
+    def compare():     
+        user0, user1 = request.values["user0"], request.values["user1"]
         if user0 == user1:
             message = "Cannot compare users to themselves!"
         else:
             prediction = predict_user(
                 user0, user1, request.values["tweet_text"])
-            message = "'{}' is more likely to be said by {} than {}".format(
+            message = "'{}' '{}' is more likely to be said by {} than {}".format(prediction,
                 request.values["tweet_text"],
                 user1 if prediction else user0,
                 user0 if prediction else user1
             )
-        return str(prediction)
-        # return render_template("prediction.html", title="prediction", message=message)
+        # return str(prediction)
+        return render_template("prediction.html", title="prediction", message=message)
 
     @app.route('/iris')
     def iris():    
